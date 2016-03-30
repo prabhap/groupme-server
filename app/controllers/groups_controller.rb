@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
     # @groups = Group.where(:latitude => @latitude, :longitude => @longitude)
     # @groups = Group.all.select(:name)
     @groups = Group.near([@latitude, @longitude], 1, :units => :km).select(:name)
-    render json: @groups || [] and return
+    render json: (@groups || []) and return
   end
 
   def create
