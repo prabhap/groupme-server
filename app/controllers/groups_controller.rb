@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
     # @groups = Group.all.select(:name)
     @groups = Group.near([@latitude, @longitude], 1, :units => :km).select(:name)
     @groups = [] if @groups.empty?
-    render json: @group and return
+    render json: @groups and return
   end
 
   def create
