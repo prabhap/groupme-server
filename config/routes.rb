@@ -56,4 +56,7 @@ Rails.application.routes.draw do
 
   get 'groups' => 'groups#index'
   post 'groups/create' => 'groups#create'
+  post 'groups/:group_id/conversation' => 'conversations#create'
+  get 'groups/:group_id/conversations' => 'conversations#list'
+
 end
