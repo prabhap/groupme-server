@@ -58,5 +58,9 @@ Rails.application.routes.draw do
   post 'groups/create' => 'groups#create'
   post 'groups/:group_id/conversation' => 'conversations#create'
   get 'groups/:group_id/conversations' => 'conversations#list'
+  post 'users/create' => 'users#create'
+  post 'users/:user_id/groups/:group_id/register' => "groups#register"
+
+
 
 end
