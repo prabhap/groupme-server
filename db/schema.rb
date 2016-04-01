@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160331072017) do
     t.datetime "updated_at"
   end
 
-  create_table "user_subscriptions", force: true do |t|
+  create_table "user_groups", force: true do |t|
     t.integer "group_id"
     t.integer "user_id"
   end

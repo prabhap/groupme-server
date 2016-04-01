@@ -21,9 +21,9 @@ class GroupsController < ApplicationController
   def register
     user = User.find(params[:user_id])
     group = Group.find(params[:group_id])
-    user.subscribed_groups << group
+    user.groups << group
     user.save
-    render group.conversations and return
+    render json: group.conversations and return
   end
 
 end
