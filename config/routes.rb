@@ -54,10 +54,11 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  get 'groups' => 'groups#index'
-  post 'groups/create' => 'groups#create'
-  post 'groups/:group_id/conversation' => 'conversations#create'
-  get 'groups/:group_id/conversations' => 'conversations#list'
+  get 'user/:user_id/unSubscribedGroups' => 'groups#unSubscribedGroups'
+  get 'user/:user_id/subscribedGroups' => 'groups#subscribedGroups'
+  post 'user/:user_id/groups/create' => 'groups#create'
+  post 'user/user_id/groups/:group_id/conversation' => 'conversations#create'
+  get 'user/user_id/groups/:group_id/conversations' => 'conversations#list'
   post 'users/create' => 'users#create'
   post 'users/:user_id/groups/:group_id/register' => 'groups#register'
 
