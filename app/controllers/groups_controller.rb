@@ -11,7 +11,9 @@ class GroupsController < ApplicationController
   end
 
   def subscribedGroups
-    render json: @user.groups and return
+    @groups = @user.groups
+    @groups = [] if @groups.empty?
+    render json: @groups and return
   end
 
   def create
