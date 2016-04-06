@@ -60,6 +60,7 @@ Rails.application.routes.draw do
   post 'users/:user_id/groups/:group_id/conversation' => 'conversations#create'
   get  'users/:user_id/groups/:group_id/conversations' => 'conversations#list'
   post 'users/create' => 'users#create'
+  put 'users/:user_id/updateToken' => 'users#update_token'
   post 'users/:user_id/groups/:group_id/register' => 'groups#register'
 
 
