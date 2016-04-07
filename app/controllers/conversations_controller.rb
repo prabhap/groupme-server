@@ -3,10 +3,10 @@ class ConversationsController < ApplicationController
   skip_before_filter  :verify_authenticity_token
   def create
     group = Group.find(params[:group_id])
-    group.conversations.build(text: params[:conversation])
+    group.conversations.build(text: params[:conversation], user: User.find(params[:user_id]))
     if group.save
-      options = {data: {message: params[:conversation]}}
-      @gcm.send(group.users.map(&:token), options)
+      options = {data: {message: params[:conversation], group_name: group.name}}
+      @gcm.send(group.users.where.not(id: params[:user_id]).map(&:token), options)
     end
     render text: "Conversation saved Successfully", status: :created
   end
