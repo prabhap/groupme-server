@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 
 gem 'geocoder'
 gem 'gcm'
+gem 'active_model_otp'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
