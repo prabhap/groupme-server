@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     user = User.find_or_initialize_by(email: params[:phoneNumber])
     if(user.new_record?)
       user.save!
-      OtpMailer.generate_otp_mail(user).deliver
+      # OtpMailer.generate_otp_mail(user).deliver
     end
     render text: user.id and return
   end
