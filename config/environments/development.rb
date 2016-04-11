@@ -23,7 +23,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {address:'smtp.gmail.com', port:587,
       user_name: 'groupme.noreply@gmail.com',
       domain: 'gmail.com',
-      password: 'likemike1',
+      password: 'GingBook1',
       authentication: :login,
       openssl_verify_mode: 'none',
       enable_starttls_auto: true
