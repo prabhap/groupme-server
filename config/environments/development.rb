@@ -23,7 +23,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       address: "smtp.gmail.com",
       port: "587",
-      domain:"shrouded-everglades-40862.herokuapp.com"
+      domain:"shrouded-everglades-40862.herokuapp.com",
       user_name: "groupme.noreply@gmail.com",
       password: "GingBook1",
       authentication: :plain,
