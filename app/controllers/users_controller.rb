@@ -2,12 +2,14 @@ class UsersController < ApplicationController
   skip_before_filter  :verify_authenticity_token
 
   def create
-    user = User.find_or_initialize_by(email: params[:phoneNumber])
+    user = User.find_or_initialize_by(email: params[:email])
+    otp_code = nil
     if(user.new_record?)
       user.save!
-      # OtpMailer.generate_otp_mail(user).deliver
+      otp_code = user.otp_code
+      OtpMailer.generate_otp_mail(user, otp_code).deliver
     end
-    render text: user.id and return
+    render json: {user_id: user.id, otp: otp_code } and return
   end
 
   def authenticate_otp

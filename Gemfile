@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 gem 'geocoder'
 gem 'gcm'
 gem 'active_model_otp'
+gem "letter_opener", :group => :development
 
 
 # Use ActiveModel has_secure_password
